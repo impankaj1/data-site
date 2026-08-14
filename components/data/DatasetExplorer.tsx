@@ -31,6 +31,21 @@ export function DatasetExplorer() {
     return SECTOR_DETAILS.find((s) => s.category === selectedCategory);
   }, [selectedCategory]);
 
+  React.useEffect(() => {
+    const categoryParam = searchParams.get("category") as IndustryCategory;
+    if (categoryParam) {
+      setSelectedCategory(categoryParam);
+      
+      const timer = setTimeout(() => {
+        const element = document.getElementById("explorer");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [searchParams]);
+
   const categoriesList = [
     { label: "All Datasets", val: IndustryCategory.ALL },
     { label: "AI & Technology", val: IndustryCategory.TECHNOLOGY },

@@ -22,7 +22,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={cn("h-full antialiased", inter.variable, geistMono.variable)}
     >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-[#07090E] dark:text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-800 dark:selection:text-cyan-200">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-[#07090E] dark:text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-800 dark:selection:text-cyan-200"
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>
