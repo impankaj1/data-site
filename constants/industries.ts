@@ -8,6 +8,7 @@ import {
   DataPipelineStep,
   IntegrationOption,
   IntegrationPlatform,
+  SectorDetail,
 } from "../types/data";
 
 export const FEATURED_DATASETS: DatasetItem[] = [
@@ -259,4 +260,91 @@ export const SECURITY_CERTIFICATIONS = [
   { title: "SOC 2 Type II Compliant", badge: "Audit Verified", desc: "Independently audited controls for availability, integrity, and privacy." },
   { title: "GDPR & CCPA Compliant", badge: "Privacy Compliant", desc: "Anonymized, privacy-first data handling with complete compliance guarantees." },
   { title: "99.99% Enterprise Uptime", badge: "SLA Guaranteed", desc: "Redundant multi-region API gateways with financial-grade reliability." },
+];
+
+export const SECTOR_DETAILS: SectorDetail[] = [
+  {
+    category: IndustryCategory.TECHNOLOGY,
+    title: "Technology & AI Compute",
+    subtitle: "Access verified datasets on LLMs, semiconductors, and cloud infrastructure to power your AI investment and strategy decisions.",
+    description: "The global AI race is defined by one critical factor: compute. With hyperscalers committing over $300 billion in capital expenditure and the semiconductor industry projected to grow by 38%, the landscape is shifting at a breakneck pace. To navigate this complexity, you need more than just news; you need data. Our Technology & AI Compute sector provides actionable intelligence on the entire ecosystem, from chip fabrication to enterprise software deployment.",
+    intelligenceAreas: [
+      {
+        title: "Semiconductor Supply Chain",
+        description: "Track capacity, inventory, and pricing for GPUs, high-bandwidth memory, and networking equipment.",
+      },
+      {
+        title: "Enterprise AI Adoption",
+        description: "Monitor software monetization and the integration of AI into platforms like cloud services and CRM.",
+      },
+      {
+        title: "LLM & AI Infrastructure",
+        description: "Gain insights into the growth of data centers, grid infrastructure, and the networking technology that powers the AI factory.",
+      },
+    ],
+    outro: "Our 5,000+ human-verified datasets and sub-50ms API endpoints deliver the critical data you need to identify market leaders, assess supply chain risks, and predict the next wave of technology spending.",
+  },
+  {
+    category: IndustryCategory.FINANCE,
+    title: "Finance & FinTech Velocity",
+    subtitle: "Leverage structured industry data on cross-border payments, neo-banking, and digital assets to gain a competitive edge.",
+    description: "The financial services industry is undergoing a fundamental transformation driven by the digitization of money and the rise of embedded finance. Traditional cross-border payment rails, like SWIFT, are being replaced by faster, more cost-effective solutions, with remittance companies now utilizing stablecoins to achieve settlement finality in under 60 seconds. Our Finance & FinTech sector provides the critical data to understand these shifts and capture new opportunities.",
+    intelligenceAreas: [
+      {
+        title: "Cross-Border Payments & Remittance",
+        description: "Analyze the adoption of stablecoins, real-time settlement engines, and new regulatory landscapes.",
+      },
+      {
+        title: "Neo-Banking & FinTech",
+        description: "Monitor the growth of digital-only banks, payment gateways, and alternative lending platforms.",
+      },
+      {
+        title: "Digital Assets & Blockchain",
+        description: "Track the integration of tokenized real-world assets and the development of Super Apps.",
+      },
+    ],
+    outro: "Stay ahead of the curve with our structured industry datasets and live market telemetry, offering the clarity needed to invest in and build the next generation of financial infrastructure.",
+  },
+  {
+    category: IndustryCategory.HEALTHCARE,
+    title: "Healthcare & Biopharma",
+    subtitle: "Make informed decisions with verified data on oncology pipelines, medical devices, and the AI revolution in drug discovery.",
+    description: "The healthcare and biopharma sectors are being transformed by data and AI. From the development of Multi-Cancer Early Detection (MCED) tests to the rise of AI-enabled drug discovery tools, the pace of innovation is accelerating. Our healthcare intelligence provides the verified, high-quality data you need to navigate clinical pipelines, regulatory milestones, and market trends. With investment in biopharma stabilizing and M&A activity remaining robust, having the right data at your fingertips is non-negotiable.",
+    intelligenceAreas: [
+      {
+        title: "Oncology & Drug Pipelines",
+        description: "Track clinical trial results, FDA advisory committee reviews, and the performance of leading treatments.",
+      },
+      {
+        title: "Medical Devices & Diagnostics",
+        description: "Monitor the development of next-gen vital sign monitors, orthopedic implants, and novel diagnostic tools.",
+      },
+      {
+        title: "AI in Healthcare",
+        description: "Uncover the companies using AI to turn data into actionable insights for drug discovery and diagnostics.",
+      },
+    ],
+    outro: "Access our curated datasets on oncology pipelines, medical device innovations, and supply chain logistics to support your strategic decisions in this high-stakes industry.",
+  },
+  {
+    category: IndustryCategory.ENERGY,
+    title: "Clean Energy & Utilities",
+    subtitle: "Analyze grid storage, carbon pricing, and renewable energy trends with our verified environmental data.",
+    description: "The transition to a clean energy future is complex, requiring massive investment in grid storage, renewables, and carbon management. Carbon pricing and policy approaches are critical variables that affect the cost and viability of renewable projects. With global electricity demand expected to accelerate and grid infrastructure under strain, utilities and energy companies need data to optimize operations and investments. Our Clean Energy & Utilities datasets provide the transparency and insight necessary to navigate this transition.",
+    intelligenceAreas: [
+      {
+        title: "Grid Storage & Renewables",
+        description: "Monitor the deployment of energy storage capacity, wind, and solar projects.",
+      },
+      {
+        title: "Carbon Pricing & Markets",
+        description: "Track carbon pricing mechanisms and their impact on energy investment decisions.",
+      },
+      {
+        title: "Utility Infrastructure",
+        description: "Analyze grid upgrades, equipment shortages, and the buildout of new transmission capacity.",
+      },
+    ],
+    outro: "Leverage our structured datasets and API endpoints to model energy markets, evaluate grid resiliency, and make data-driven decisions for a sustainable future.",
+  },
 ];

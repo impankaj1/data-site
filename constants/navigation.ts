@@ -8,6 +8,17 @@ export const MAIN_NAVIGATION: NavItem[] = [
     href: "/#solutions",
     megaMenu: [
       {
+        categoryTitle: "Business Solutions",
+        items: [
+          {
+            title: "Business Consultancy",
+            description: "Bridge the gap between raw data and decisive strategic action.",
+            href: "/consultancy",
+            badge: "New",
+          },
+        ],
+      },
+      {
         categoryTitle: "Core Data Capabilities",
         items: [
           {
@@ -95,7 +106,7 @@ export const MAIN_NAVIGATION: NavItem[] = [
   {
     id: "nav-company",
     label: "About Us",
-    href: "/#about",
+    href: "/about",
   },
 ];
 
@@ -123,7 +134,8 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
   {
     title: "Company",
     links: [
-      { label: "About Shine Global Solutions", href: "/#about" },
+      { label: "About Shine Global Solutions", href: "/about" },
+      { label: "Business Consultancy", href: "/consultancy" },
       { label: "Client Success Stories", href: "/#testimonials" },
       { label: "Security & Compliance", href: "/data#security" },
       { label: "Careers", href: "/#careers" },

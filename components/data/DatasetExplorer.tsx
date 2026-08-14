@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { FEATURED_DATASETS } from "@/constants/industries";
+import { FEATURED_DATASETS, SECTOR_DETAILS } from "@/constants/industries";
 import { IndustryCategory, DatasetItem } from "@/types/data";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -26,6 +26,10 @@ export function DatasetExplorer() {
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [previewDataset, setPreviewDataset] = useState<DatasetItem | null>(null);
   const [requestDatasetTitle, setRequestDatasetTitle] = useState<string | null>(null);
+
+  const activeSector = useMemo(() => {
+    return SECTOR_DETAILS.find((s) => s.category === selectedCategory);
+  }, [selectedCategory]);
 
   const categoriesList = [
     { label: "All Datasets", val: IndustryCategory.ALL },
@@ -98,6 +102,53 @@ export function DatasetExplorer() {
             </button>
           )}
         </div>
+
+        {/* Sector Intelligence Overview */}
+        {selectedCategory !== IndustryCategory.ALL && activeSector && (
+          <div className="bg-white dark:bg-[#0B0F17] rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6 animate-in fade-in-50 duration-300">
+            <div className="space-y-2">
+              <Badge variant="outline" className="bg-cyan-500/10 border-cyan-500/20 text-cyan-700 dark:text-cyan-300 text-xs px-2.5 py-0.5 font-mono">
+                SECTOR INTELLIGENCE PROFILE
+              </Badge>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                {activeSector.title}
+              </h2>
+              <p className="text-slate-650 dark:text-slate-400 text-xs sm:text-sm font-semibold">
+                {activeSector.subtitle}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              <div className="lg:col-span-7 space-y-4">
+                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                  {activeSector.description}
+                </p>
+                <div className="text-xs font-mono text-slate-500 dark:text-slate-400 border-l-2 border-cyan-500 pl-3.5 italic leading-relaxed">
+                  {activeSector.outro}
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 bg-slate-50 dark:bg-[#06080E] p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-805 space-y-4">
+                <h4 className="text-[11px] font-bold tracking-wider text-slate-400 dark:text-slate-500 uppercase font-mono">
+                  Key Intelligence Areas
+                </h4>
+                <div className="space-y-3.5">
+                  {activeSector.intelligenceAreas.map((area, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-500"></span>
+                        {area.title}
+                      </div>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 pl-3.5 leading-relaxed">
+                        {area.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Datasets Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -193,8 +244,8 @@ export function DatasetExplorer() {
               </DialogDescription>
             </DialogHeader>
 
-            <div className="space-y-4 py-2">
-              <div className="bg-slate-50 dark:bg-[#06080E] p-4 rounded-xl border border-slate-200 dark:border-slate-800 overflow-x-auto">
+            <div className="space-y-4 py-2 min-w-0 w-full">
+              <div className="bg-slate-50 dark:bg-[#06080E] p-4 rounded-xl border border-slate-200 dark:border-slate-800 overflow-x-auto max-w-full">
                 <table className="w-full text-left text-xs font-mono">
                   <thead className="bg-slate-200/70 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-b border-slate-300 dark:border-slate-800 uppercase">
                     <tr>

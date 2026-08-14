@@ -102,3 +102,17 @@ export interface CompanyStat {
   label: string;
   sublabel: string;
 }
+
+export interface SectorIntelligenceArea {
+  title: string;
+  description: string;
+}
+
+export interface SectorDetail {
+  category: IndustryCategory;
+  title: string;
+  subtitle: string;
+  description: string;
+  intelligenceAreas: SectorIntelligenceArea[];
+  outro: string;
+}

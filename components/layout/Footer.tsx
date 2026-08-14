@@ -83,11 +83,8 @@ export function Footer() {
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 text-white shadow-md shadow-cyan-500/20">
                 <Database className="h-5 w-5" />
               </div>
-              <span className="text-lg font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-                SHINE GLOBAL
-                <span className="rounded bg-cyan-500/10 px-1.5 py-0.5 text-[10px] text-cyan-700 dark:text-cyan-400 border border-cyan-500/20">
-                  DATA
-                </span>
+              <span className="text-lg font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2 uppercase">
+                Shine Global Solutions
               </span>
             </Link>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
